@@ -7,4 +7,55 @@
     tools:context="com.luizgbraganca.avante123.Configuracoes">
 
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="21dp"
+        android:text="Escolha um Tema clicando na imagem:"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/batman"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="25dp"
+        app:srcCompat="@drawable/batman"
+        android:layout_below="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:onClick="batman"/>
+
+    <ImageView
+        android:id="@+id/deadpool"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/batman"
+        android:layout_marginEnd="37dp"
+        app:srcCompat="@drawable/deadpool"
+        android:onClick="deadpool"/>
+
+    <ImageView
+        android:id="@+id/homemAranha"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_alignStart="@+id/batman"
+        android:layout_below="@+id/batman"
+        android:layout_marginTop="70dp"
+        app:srcCompat="@drawable/spiderman"
+        android:onClick="homemAranha"/>
+
+    <ImageView
+        android:id="@+id/homemDeFerro"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_alignStart="@+id/deadpool"
+        android:layout_alignTop="@+id/homemAranha"
+        app:srcCompat="@drawable/homemdeferro"
+        android:onClick="homemDeFerro"/>
+
 </RelativeLayout>
