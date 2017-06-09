@@ -1,5 +1,7 @@
 package com.luizgbraganca.avante123;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
@@ -8,15 +10,18 @@ import android.widget.TextView;
  * Created by luiz on 06/06/17.
  */
 
-public class UserListViewHolder extends RecyclerView.ViewHolder {
+public class UserListViewHolder extends RecyclerView.ViewHolder
+{
     private final View mView;
     private static final int POST_TEXT_MAX_LINES = 6;
     private TextView userProjetoViewHolder;
     private TextView userDescricaoViewHolder;
     private UserClickListener mListener;
 
-    public UserListViewHolder(View itemView) {
+    public UserListViewHolder(View itemView)
+    {
         super(itemView);
+
         mView = itemView;
         userProjetoViewHolder = (TextView) mView.findViewById(R.id.nomeProjetoLista);
         userDescricaoViewHolder = (TextView) mView.findViewById(R.id.descricaoLista);

@@ -73,7 +73,6 @@ public class EncontrarGrupo extends FragmentActivity implements OnMapReadyCallba
 
             // adiciona o botao de zoom
             mMap.getUiSettings().setZoomControlsEnabled(true);
-
             mMap.setMyLocationEnabled(true);
         } catch(SecurityException ex){
             Log.e(TAG, "Error", ex);

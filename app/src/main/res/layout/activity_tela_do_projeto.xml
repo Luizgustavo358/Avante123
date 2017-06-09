@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.luizgbraganca.avante123.TelaDoProjeto">
+
+
+    <TextView
+        android:id="@+id/nomeProjeto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="17dp"
+        android:text="nome do  projeto "
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/descricaoProjeto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/nomeProjeto"
+        android:layout_below="@+id/nomeProjeto"
+        android:layout_marginTop="31dp"
+        android:text="Descrição"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/txtGrupo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/descricaoProjeto"
+        android:layout_below="@+id/descricaoProjeto"
+        android:layout_marginTop="39dp"
+        android:text="Grupo:" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/listPessoas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignStart="@+id/txtGrupo"
+        android:layout_below="@+id/txtGrupo"
+        android:layout_marginTop="18dp" />
+
+</RelativeLayout>

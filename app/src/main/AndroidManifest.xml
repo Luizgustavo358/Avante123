@@ -28,7 +28,6 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"
@@ -39,10 +38,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".Register"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
 
         <!-- Tela Principal -->
         <activity
@@ -99,5 +97,11 @@
 
         <service
             android:name=".GPS_Service" />
+
+        <activity
+            android:name=".EscolheGrupo" />
+
+        <activity
+            android:name=".TelaDoProjeto" />
     </application>
 </manifest>
