@@ -9,6 +9,7 @@ import android.widget.Toast;
 public class Configuracoes extends AppCompatActivity
 {
     private ImageView batman, deadpool, homemAranha, homemDeFerro;
+    private int i = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -26,8 +27,24 @@ public class Configuracoes extends AppCompatActivity
     {
         Toast.makeText(Configuracoes.this, "Batman nanananana :)", Toast.LENGTH_SHORT).show();
 
-        batman.setImageResource(R.drawable.batman2);
+        // troca o tema
+        /**/
+
+        // zuera
+        easterEgg( );
     }
+
+    public void easterEgg( )
+    {
+        i++;
+
+        if(i == 3)
+        {
+            batman.setImageResource(R.drawable.batman2);
+
+            Toast.makeText(Configuracoes.this, ":V", Toast.LENGTH_SHORT).show();
+        }// end if
+    }// end easterEgg( )
 
     public void deadpool(View view)
     {

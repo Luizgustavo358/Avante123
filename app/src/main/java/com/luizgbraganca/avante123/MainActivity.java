@@ -88,6 +88,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 for(DataSnapshot dataSnapshot1: dataSnapshot.child("projetos").getChildren())
                 {
                     Projetos pj = dataSnapshot1.getValue(Projetos.class);
+
+                    Log.i("Projeto", pj.toString());
+
                     projetos.add(pj);
                     projetosAdapter.notifyDataSetChanged();
                 }
