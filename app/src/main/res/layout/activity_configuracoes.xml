@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context="com.luizgbraganca.avante123.Configuracoes">
 
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -30,14 +29,14 @@
         android:onClick="batman"/>
 
     <ImageView
-        android:id="@+id/deadpool"
+        android:id="@+id/homemDeFerro"
         android:layout_width="140dp"
         android:layout_height="140dp"
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/batman"
         android:layout_marginEnd="37dp"
-        app:srcCompat="@drawable/deadpool"
-        android:onClick="deadpool"/>
+        app:srcCompat="@drawable/homemdeferro"
+        android:onClick="homemDeFerro"/>
 
     <ImageView
         android:id="@+id/homemAranha"
@@ -50,12 +49,11 @@
         android:onClick="homemAranha"/>
 
     <ImageView
-        android:id="@+id/homemDeFerro"
+        android:id="@+id/deadpool"
         android:layout_width="140dp"
         android:layout_height="140dp"
-        android:layout_alignStart="@+id/deadpool"
+        android:layout_alignStart="@+id/homemDeFerro"
         android:layout_alignTop="@+id/homemAranha"
-        app:srcCompat="@drawable/homemdeferro"
-        android:onClick="homemDeFerro"/>
-
+        app:srcCompat="@drawable/deadpool"
+        android:onClick="deadpool"/>
 </RelativeLayout>
