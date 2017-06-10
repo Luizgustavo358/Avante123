@@ -18,7 +18,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.luizgbraganca.avante123.database.models.User;
 
-public class AddProjeto extends AppCompatActivity {
+public class AddProjeto extends AppCompatActivity
+{
     // definir dados
     private String filho;
     private Button adicionar;

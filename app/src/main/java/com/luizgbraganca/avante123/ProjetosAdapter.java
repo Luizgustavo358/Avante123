@@ -15,8 +15,8 @@ import java.util.List;
 
 public class ProjetosAdapter extends RecyclerView.Adapter<ProjetosAdapter.ProjetoViewHolder>
 {
-    List<Projetos> projetos;
-    Context context;
+    public List<Projetos> projetos;
+    public Context context;
 
     public ProjetosAdapter(List<Projetos> projetos, Context context)
     {

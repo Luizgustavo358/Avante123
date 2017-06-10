@@ -94,9 +94,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
 
             @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
+            public void onCancelled(DatabaseError databaseError) {}
         });
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler);
