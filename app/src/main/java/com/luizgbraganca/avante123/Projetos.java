@@ -15,8 +15,14 @@ import com.luizgbraganca.avante123.database.models.User;
 
 public class Projetos
 {
+    // definir dados
     private String nomeProjeto;
     private String descricao;
+
+    public Projetos( )
+    {
+
+    }
 
     public Projetos(String nomeProjeto, String descricao) {
         this.nomeProjeto = nomeProjeto;

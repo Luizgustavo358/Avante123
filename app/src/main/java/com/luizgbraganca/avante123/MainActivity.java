@@ -56,12 +56,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         mDatabase.child("projetos").addChildEventListener(new ChildEventListener() {
             @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-
-            }
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {}
 
             @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+            public void onChildChanged(DataSnapshot dataSnapshot, String s)
+            {
                 Projetos p = dataSnapshot.getValue(Projetos.class);
 
                 projetos.add(p);
@@ -73,13 +72,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
 
             @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
+            public void onChildRemoved(DataSnapshot dataSnapshot) {}
 
             @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {}
 
+            @Override
+            public void onCancelled(DatabaseError databaseError) {}
+        });
+
+        // esse aqui ta pegando os dados do firebase
+        mDatabase.limitToLast(2).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for(DataSnapshot dataSnapshot1: dataSnapshot.child("projetos").getChildren())
+                {
+                    Projetos pj = dataSnapshot1.getValue(Projetos.class);
+                    projetos.add(pj);
+                    projetosAdapter.notifyDataSetChanged();
+                }
             }
 
             @Override
@@ -128,6 +139,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onResume() {
         super.onResume();
+    }
+
+    @Override
+    protected void onDestroy( )
+    {
+        super.onDestroy();
+        projetos.clear();
     }
 
     @Override
