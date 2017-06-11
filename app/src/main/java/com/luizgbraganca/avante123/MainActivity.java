@@ -95,7 +95,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     Projetos pj = new Projetos(projetoBD, dataSnapshot1.getValue(Projetos.class).getDescricao() + "");
 
                     projetos.add(pj);
-                    //projetosAdapter.notifyDataSetChanged();
                 }
                 projetosAdapter.notifyDataSetChanged();
             }
@@ -107,10 +106,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler);
 
         projetos = new ArrayList<>();
-
-        Projetos p1 = new Projetos("Avante", "Tipo Trello");
-
-        projetos.add(p1);
 
         projetosAdapter = new ProjetosAdapter(projetos, this);
 

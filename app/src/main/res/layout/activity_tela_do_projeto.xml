@@ -44,10 +44,10 @@
         android:layout_alignStart="@+id/txtGrupo"
         android:layout_below="@+id/txtGrupo"
         android:layout_marginTop="18dp"
-        android:layout_toStartOf="@+id/floatingActionButton" />
+        android:layout_toStartOf="@+id/addPessoa" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/addPessoa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"

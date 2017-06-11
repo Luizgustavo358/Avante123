@@ -7,7 +7,7 @@ import android.widget.TextView;
 public class TelaDoProjeto extends AppCompatActivity
 {
     // definir dados
-    TextView nomeProjeto, descricaoProjeto;
+    private TextView nomeProjeto, descricaoProjeto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -17,5 +17,11 @@ public class TelaDoProjeto extends AppCompatActivity
 
         nomeProjeto = (TextView) findViewById(R.id.nomeProjeto);
         descricaoProjeto = (TextView) findViewById(R.id.descricaoProjeto);
+
+        String projeto = getIntent().getStringExtra("nomeProjeto");
+        String descricao = getIntent().getStringExtra("descricao");
+
+        nomeProjeto.setText(projeto);
+        descricaoProjeto.setText(descricao);
     }
 }
