@@ -16,17 +16,18 @@
         android:layout_marginStart="18dp"
         android:layout_marginTop="17dp"
         android:text="nome do  projeto "
+        android:textColor="@color/black"
         android:textSize="22sp" />
 
     <TextView
         android:id="@+id/descricaoProjeto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/nomeProjeto"
-        android:layout_below="@+id/nomeProjeto"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="17dp"
         android:text="Descrição"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:layout_below="@+id/nomeProjeto"
+        android:layout_alignStart="@+id/nomeProjeto" />
 
     <TextView
         android:id="@+id/txtGrupo"

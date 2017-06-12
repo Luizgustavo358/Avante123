@@ -31,6 +31,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
@@ -54,45 +55,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         firebaseDatabase = FirebaseDatabase.getInstance();
         mDatabase = firebaseDatabase.getReference();
 
-        mDatabase.child("projetos").addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {}
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s)
-            {
-                Projetos p = dataSnapshot.getValue(Projetos.class);
-
-                projetos.add(p);
-
-                projetosAdapter.notifyDataSetChanged();
-
-                Toast.makeText(MainActivity.this, p.getNomeProjeto(), Toast.LENGTH_SHORT).show();
-                Toast.makeText(MainActivity.this, p.getDescricao(), Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {}
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {}
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {}
-        });
-
         // esse aqui ta pegando os dados do firebase
         mDatabase.limitToLast(2).addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+            public void onDataChange(DataSnapshot dataSnapshot)
+            {
                 for(DataSnapshot dataSnapshot1: dataSnapshot.child("projetos").getChildren())
                 {
                     // pega o nome do projeto
                     String projetoBD = dataSnapshot1.getKey();
+                    String descricaoBD = dataSnapshot1.child("descricao").getValue().toString();
 
-                    //Projetos pj = dataSnapshot1.getValue(Projetos.class);
-
-                    Projetos pj = new Projetos(projetoBD, dataSnapshot1.getValue(Projetos.class).getDescricao() + "");
+                    Projetos pj = new Projetos(projetoBD, descricaoBD);
 
                     projetos.add(pj);
                 }
@@ -149,7 +123,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     @Override
-    public void onBackPressed() {
+    public void onBackPressed()
+    {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
@@ -160,7 +135,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(MenuItem item)
+    {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
@@ -168,8 +144,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             tarefas( );
         } else if (id == R.id.nav_grupo) {
             grupo( );
-        } else if (id == R.id.nav_config) {
-            config( );
         } else if (id == R.id.nav_sobre) {
             sobre( );
         } else if (id == R.id.nav_deslogar) {
@@ -190,12 +164,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void grupo( )
     {
         Intent intent = new Intent(MainActivity.this, EscolheGrupo.class);
-        startActivity(intent);
-    }
-
-    public void config( )
-    {
-        Intent intent = new Intent(MainActivity.this, Configuracoes.class);
         startActivity(intent);
     }
 

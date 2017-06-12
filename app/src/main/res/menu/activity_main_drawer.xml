@@ -10,10 +10,6 @@
             android:id="@+id/nav_grupo"
             android:icon="@drawable/ic_grupo"
             android:title="@string/encontrar_grupo" />
-        <item
-            android:id="@+id/nav_config"
-            android:icon="@drawable/ic_configuracoes"
-            android:title="@string/configuracoes" />
     </group>
 
     <item android:title="@string/comunicacao">

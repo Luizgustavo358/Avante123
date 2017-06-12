@@ -36,7 +36,8 @@ public class EscolheGrupo extends AppCompatActivity
 
         mDatabase.limitToLast(2).addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+            public void onDataChange(DataSnapshot dataSnapshot)
+            {
                 for(DataSnapshot dataSnapshot1: dataSnapshot.child("projetos").getChildren())
                 {
                     String projetoBD = dataSnapshot1.getKey();

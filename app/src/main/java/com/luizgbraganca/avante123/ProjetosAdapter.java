@@ -50,7 +50,7 @@ public class ProjetosAdapter extends RecyclerView.Adapter<ProjetosAdapter.Projet
         return projetos.size();
     }
 
-    public class ProjetoViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
+    public static class ProjetoViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
         public TextView nomeProjetoLinha, descricaoLinha;
         private Context mContext;
@@ -81,8 +81,8 @@ public class ProjetosAdapter extends RecyclerView.Adapter<ProjetosAdapter.Projet
             Intent intent = new Intent(mContext, TelaDoProjeto.class);
 
             intent.putExtra("position", itemPosition + "");
-            intent.putExtra("nomeProjeto", nomeProjetoLinha + "");
-            intent.putExtra("descricao", descricaoLinha + "");
+            intent.putExtra("nomeProjeto", nomeProjetoLinha.getText().toString());
+            intent.putExtra("descricao", descricaoLinha.getText().toString());
 
             mContext.startActivity(intent);
         }

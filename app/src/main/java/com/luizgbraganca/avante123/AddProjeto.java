@@ -26,6 +26,7 @@ public class AddProjeto extends AppCompatActivity
     private DatabaseReference mDatabase;
     private EditText nomeProjeto;
     private EditText descricaoProjeto;
+    private EditText nomeCriador;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,7 @@ public class AddProjeto extends AppCompatActivity
         adicionar = (Button) findViewById(R.id.addProj);
         nomeProjeto = (EditText) findViewById(R.id.nomeProjeto);
         descricaoProjeto = (EditText) findViewById(R.id.descricaoProjeto);
+        nomeCriador = (EditText) findViewById(R.id.nomeCriador);
 
         adicionar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,12 +62,12 @@ public class AddProjeto extends AppCompatActivity
 
     public void adicionaProjeto()
     {
-        writeProjeto(nomeProjeto.toString(), descricaoProjeto.toString());
+        writeProjeto(nomeProjeto.getText().toString(), descricaoProjeto.getText().toString(), nomeCriador.getText().toString());
     }
 
-    private void writeProjeto(String projeto, String descricao)
+    private void writeProjeto(String projeto, String descricao, String nomeCriador)
     {
-        User user = new User(projeto, descricao, true);
+        User user = new User(projeto, descricao, nomeCriador);
 
         mDatabase.child("projetos").child(filho).setValue(user);
     }

@@ -20,7 +20,8 @@
         android:layout_weight="0.04"
         android:text="@string/nome_projeto"
         android:textAlignment="center"
-        android:textSize="18sp" />
+        android:textColor="@color/black"
+        android:textSize="20sp" />
 
     <Space
         android:layout_width="match_parent"
@@ -48,6 +49,19 @@
         android:ems="10"
         android:hint="@string/edt_txt_descricao"
         android:inputType="textMultiLine" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.10" />
+
+    <EditText
+        android:id="@+id/nomeCriador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nome do Criador"
+        android:inputType="textPersonName" />
 
     <Space
         android:layout_width="match_parent"

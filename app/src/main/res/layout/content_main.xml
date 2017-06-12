@@ -24,7 +24,12 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/lista"
+            android:textColor="@color/black"
             android:textSize="22sp" />
+
+        <Space
+            android:layout_width="404dp"
+            android:layout_height="14dp" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler"
