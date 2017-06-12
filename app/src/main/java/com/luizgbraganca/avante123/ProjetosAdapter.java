@@ -1,12 +1,19 @@
 package com.luizgbraganca.avante123;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.preference.DialogPreference;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
@@ -16,7 +23,7 @@ import java.util.List;
 
 public class ProjetosAdapter extends RecyclerView.Adapter<ProjetosAdapter.ProjetoViewHolder>
 {
-    public List<Projetos> projetos;
+    public static List<Projetos> projetos;
     public Context context;
 
     public ProjetosAdapter(List<Projetos> projetos, Context context)
@@ -36,11 +43,6 @@ public class ProjetosAdapter extends RecyclerView.Adapter<ProjetosAdapter.Projet
     @Override
     public void onBindViewHolder(ProjetosAdapter.ProjetoViewHolder holder, int position)
     {
-//        Projetos projeto = projetos.get(position);
-//
-//        holder.nomeProjetoLinha.setText(projeto.getNomeProjeto());
-//        holder.descricaoLinha.setText(projeto.getDescricao());
-
         holder.bindProjeto(projetos.get(position));
     }
 
@@ -52,8 +54,10 @@ public class ProjetosAdapter extends RecyclerView.Adapter<ProjetosAdapter.Projet
 
     public static class ProjetoViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
+        // definir dados
         public TextView nomeProjetoLinha, descricaoLinha;
         private Context mContext;
+        public DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
 
         public ProjetoViewHolder(View itemView)
         {
@@ -76,15 +80,51 @@ public class ProjetosAdapter extends RecyclerView.Adapter<ProjetosAdapter.Projet
         @Override
         public void onClick(View v)
         {
-            int itemPosition = getLayoutPosition();
+            AlertDialog alerta;
 
-            Intent intent = new Intent(mContext, TelaDoProjeto.class);
+            final int itemPosition = getLayoutPosition();
 
-            intent.putExtra("position", itemPosition + "");
-            intent.putExtra("nomeProjeto", nomeProjetoLinha.getText().toString());
-            intent.putExtra("descricao", descricaoLinha.getText().toString());
+            AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
 
-            mContext.startActivity(intent);
+            builder.setTitle("Escola uma Opção:");
+
+            builder.setMessage("");
+
+            builder.setPositiveButton("Ver", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface arg0, int arg1)
+                {
+                    Intent intent = new Intent(mContext, TelaDoProjeto.class);
+
+                    intent.putExtra("position", itemPosition + "");
+                    intent.putExtra("nomeProjeto", nomeProjetoLinha.getText().toString());
+                    intent.putExtra("descricao", descricaoLinha.getText().toString());
+
+                    mContext.startActivity(intent);
+                }// end onClick( )
+            });
+
+            builder.setNegativeButton("Apagar", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface arg0, int arg1)
+                {
+                    // apaga
+                    Projetos theRemovedItem = projetos.get(itemPosition);
+
+//                    // remove your item from data base
+//                    projetos.remove(itemPosition);  // remove the item from list
+
+                    remover(theRemovedItem.getNomeProjeto());
+                }// end onClick( )
+            });
+
+            //cria o AlertDialog
+            alerta = builder.create();
+            //Exibe
+            alerta.show();
+        }
+
+        public void remover(String nomeProjeto)
+        {
+            mDatabase.child("projetos").child(nomeProjeto).removeValue();
         }
     }
 }

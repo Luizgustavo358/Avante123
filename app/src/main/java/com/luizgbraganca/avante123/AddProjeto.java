@@ -23,7 +23,7 @@ public class AddProjeto extends AppCompatActivity
     // definir dados
     private String filho;
     private Button adicionar;
-    private DatabaseReference mDatabase;
+    public DatabaseReference mDatabase;
     private EditText nomeProjeto;
     private EditText descricaoProjeto;
     private EditText nomeCriador;

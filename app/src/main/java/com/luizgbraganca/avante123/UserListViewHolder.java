@@ -39,12 +39,16 @@ public class UserListViewHolder extends RecyclerView.ViewHolder
     }
 
 
-    public void setText(final String text) {
-        if (text == null || text.isEmpty()) {
+    public void setText(final String text)
+    {
+        if (text == null || text.isEmpty())
+        {
             userProjetoViewHolder.setVisibility(View.GONE);
             userDescricaoViewHolder.setVisibility(View.GONE);
             return;
-        } else {
+        }
+        else
+        {
             userProjetoViewHolder.setVisibility(View.VISIBLE);
             userProjetoViewHolder.setText(text);
             userProjetoViewHolder.setMaxLines(POST_TEXT_MAX_LINES);
