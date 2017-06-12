@@ -95,13 +95,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
 
-        <service
-            android:name=".GPS_Service" />
+        <service android:name=".GPS_Service" />
 
-        <activity
-            android:name=".EscolheGrupo" />
-
-        <activity
-            android:name=".TelaDoProjeto" />
+        <activity android:name=".EscolheGrupo" />
+        <activity android:name=".TelaDoProjeto" />
+        <activity android:name=".listaProjetos"></activity>
     </application>
+
 </manifest>
