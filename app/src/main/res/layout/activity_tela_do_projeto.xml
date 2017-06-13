@@ -20,7 +20,7 @@
         android:textSize="22sp" />
 
     <TextView
-        android:id="@+id/descricaoProjeto"
+        android:id="@+id/descricaoTarefa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="17dp"
@@ -33,8 +33,8 @@
         android:id="@+id/txtGrupo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/descricaoProjeto"
-        android:layout_below="@+id/descricaoProjeto"
+        android:layout_alignStart="@+id/descricaoTarefa"
+        android:layout_below="@+id/descricaoTarefa"
         android:layout_marginTop="39dp"
         android:text="Grupo:" />
 
@@ -45,10 +45,10 @@
         android:layout_alignStart="@+id/txtGrupo"
         android:layout_below="@+id/txtGrupo"
         android:layout_marginTop="18dp"
-        android:layout_toStartOf="@+id/addPessoa" />
+        android:layout_toStartOf="@+id/addTarefas" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/addPessoa"
+        android:id="@+id/addTarefas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"

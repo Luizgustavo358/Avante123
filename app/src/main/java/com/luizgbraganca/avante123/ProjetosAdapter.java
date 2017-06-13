@@ -109,9 +109,6 @@ public class ProjetosAdapter extends RecyclerView.Adapter<ProjetosAdapter.Projet
                     // apaga
                     Projetos theRemovedItem = projetos.get(itemPosition);
 
-//                    // remove your item from data base
-//                    projetos.remove(itemPosition);  // remove the item from list
-
                     remover(theRemovedItem.getNomeProjeto());
                 }// end onClick( )
             });

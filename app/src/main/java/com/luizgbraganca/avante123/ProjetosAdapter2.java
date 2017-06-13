@@ -36,11 +36,6 @@ public class ProjetosAdapter2 extends RecyclerView.Adapter<ProjetosAdapter2.Proj
     @Override
     public void onBindViewHolder(ProjetosAdapter2.ProjetoViewHolder2 holder, int position)
     {
-//        Projetos projeto = projetos.get(position);
-//
-//        holder.nomeProjetoLinha.setText(projeto.getNomeProjeto());
-//        holder.descricaoLinha.setText(projeto.getDescricao());
-
         holder.bindProjeto(projetos.get(position));
     }
 

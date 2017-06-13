@@ -28,7 +28,7 @@ public class ProjetosAdapter3 extends RecyclerView.Adapter<ProjetosAdapter3.Proj
     @Override
     public ProjetosAdapter3.ProjetoViewHolder3 onCreateViewHolder(ViewGroup parent, int viewType)
     {
-        View view = LayoutInflater.from(context).inflate(R.layout.activity_lista_projetos, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.activity_tela_do_projeto, parent, false);
 
         return new ProjetoViewHolder3(view);
     }
@@ -36,11 +36,6 @@ public class ProjetosAdapter3 extends RecyclerView.Adapter<ProjetosAdapter3.Proj
     @Override
     public void onBindViewHolder(ProjetosAdapter3.ProjetoViewHolder3 holder, int position)
     {
-//        Projetos projeto = projetos.get(position);
-//
-//        holder.nomeProjetoLinha.setText(projeto.getNomeProjeto());
-//        holder.descricaoLinha.setText(projeto.getDescricao());
-
         holder.bindProjeto(projetos.get(position));
     }
 
@@ -66,7 +61,7 @@ public class ProjetosAdapter3 extends RecyclerView.Adapter<ProjetosAdapter3.Proj
 
         public void bindProjeto(Projetos projetos)
         {
-            nomeCriador.setText(projetos.getNomeProjeto());
+            nomeCriador.setText(projetos.getNomeCriador());
         }
     }
 }

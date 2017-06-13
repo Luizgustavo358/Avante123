@@ -9,24 +9,36 @@ import com.google.firebase.database.IgnoreExtraProperties;
 @IgnoreExtraProperties
 public class User
 {
+    // definir dados
     private String username;
     private String email;
     private String projeto;
     private String descricao;
     private String nomeCriador;
+    private String tarefa;
+    private String descTarefa;
+    private String dataTarefa;
 
-    public User (String username, String email) {
-        this.username = username;
-        this.email = email;
-    }
-
-    public User () {}
+    public User() {}
 
     public User(String projeto, String descricao, String nomeCriador)
     {
         this.projeto = projeto;
         this.descricao = descricao;
         this.nomeCriador = nomeCriador;
+    }
+
+    public User(String username, String email)
+    {
+        this.username = username;
+        this.email = email;
+    }
+
+    public User(String tarefa, String descTarefa, String dataTarefa, int a)
+    {
+        this.tarefa = tarefa;
+        this.descTarefa = descTarefa;
+        this.dataTarefa = dataTarefa;
     }
 
     public void setEmail(String email) {

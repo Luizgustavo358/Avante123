@@ -4,21 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical"
-    tools:context="com.luizgbraganca.avante123.AddProjeto"
-    android:weightSum="1">
+    tools:context="com.luizgbraganca.avante123.AdicionarTarefas">
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.10" />
+        android:layout_weight="0.04" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.04"
-        android:text="@string/nome_projeto"
+        android:text="Escreva o nome da Tarefa:"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="20sp" />
@@ -26,54 +25,54 @@
     <Space
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.08" />
+        android:layout_weight="0.03" />
 
     <EditText
-        android:id="@+id/nomeProjeto"
+        android:id="@+id/nomeTarefa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="@string/edt_txt_nome_projeto"
+        android:hint="Nome da Tarefa"
         android:inputType="textPersonName" />
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.07" />
+        android:layout_weight="0.02" />
 
     <EditText
         android:id="@+id/descricaoTarefa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.05"
         android:ems="10"
-        android:hint="@string/edt_txt_descricao"
+        android:hint="Descrição da Tarefa"
         android:inputType="textMultiLine" />
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.10" />
+        android:layout_weight="0.02" />
 
     <EditText
-        android:id="@+id/nomeCriador"
+        android:id="@+id/dataTarefa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Nome do Criador"
-        android:inputType="textPersonName" />
+        android:hint="Para quando?"
+        android:inputType="date" />
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.12" />
+        android:layout_weight="0.05" />
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="91dp">
+        android:layout_height="91dp"
+        android:layout_weight="0.05">
 
         <Button
-            android:id="@+id/addProj"
+            android:id="@+id/addTarefa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"

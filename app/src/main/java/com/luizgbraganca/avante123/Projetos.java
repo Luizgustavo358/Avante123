@@ -18,10 +18,11 @@ public class Projetos
     // definir dados
     private String nomeProjeto;
     private String descricao;
+    private String nomeCriador;
 
-    public Projetos( )
+    public Projetos(String nomeCriador, int a)
     {
-
+        this.nomeCriador = nomeCriador;
     }
 
     public Projetos(String nomeProjeto)
@@ -48,5 +49,13 @@ public class Projetos
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public String getNomeCriador() {
+        return nomeCriador;
+    }
+
+    public void setNomeCriador(String nomeCriador) {
+        this.nomeCriador = nomeCriador;
     }
 }

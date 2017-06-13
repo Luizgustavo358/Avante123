@@ -92,7 +92,8 @@
 
         <activity android:name=".EscolheGrupo" />
         <activity android:name=".TelaDoProjeto" />
-        <activity android:name=".listaProjetos"></activity>
+        <activity android:name=".listaProjetos" />
+        <activity android:name=".AdicionarTarefas"></activity>
     </application>
 
 </manifest>
